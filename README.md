@@ -1,8 +1,8 @@
-# Magazine Studio — Editorial V3
+# Magazine Studio
 
-Gerador de revistas digitais HTML offline. Importa PDF, renderiza as páginas no navegador e exporta **um arquivo HTML independente**, com as imagens e o motor Three.js incorporados.
+Editor local para transformar PDFs em revistas digitais interativas, com visual editorial e experiência realista de folhear páginas.
 
-## Rodar
+## Desenvolvimento
 
 ```bash
 npm install
@@ -11,24 +11,20 @@ npm run dev
 
 Abra `http://127.0.0.1:5173`.
 
-## Funcionalidades
+## Recursos
 
-- PDF.js no navegador (o arquivo não é enviado a um servidor).
-- Seções configuráveis no menu superior, vinculadas às páginas do PDF.
-- Editor rich text simples para o **Sobre**, exportado em drawer preta com fonte Helvetica.
-- Motor Three.js com câmera ortográfica fixa, páginas duplas, folhas deformadas em malha durante a virada e texturas persistentes durante a animação.
-- Prévia real em iframe, usando o **mesmo bundle** do HTML exportado.
-- Navegação por teclado, toque e setas, além de tela cheia.
-- Exportação HTML único, sem CDN, servidor ou acesso à internet.
+- Importação e conversão de PDFs no dispositivo.
+- Experiência de leitura baseada no [Leafthrough](https://github.com/dmtrbrl/leafthrough).
+- Páginas com dobra, sombras, arraste, inércia e frente e verso.
+- Menu de seções e painel de apresentação da edição.
+- Zoom de 75% a 250%, tela cheia e navegação por teclado.
+- Modo de leitura acessível com texto extraído do PDF, fonte ajustável e alto contraste.
+- Exportação da revista completa em um único arquivo compartilhável.
 
-## Vercel
+## Build
 
-Framework: Vite. Build: `npm run build`. Output: `dist`.
+```bash
+npm run build
+```
 
-## Observações
-
-- O build exige instalar dependências npm. Execute `npm install` antes de `npm run dev` ou `npm run build`.
-- PDFs longos e de alta resolução podem gerar HTMLs muito grandes e exigir muita memória no navegador.
-- A animação usa deformação procedural de malha em Three.js; não é uma simulação física de papel.
-- O editor rich text usa `contentEditable` e comandos nativos do navegador; o HTML exportado passa por sanitização de tags e URLs.
-- Teste o HTML exportado nos navegadores dos destinatários, especialmente em dispositivos sem WebGL ou com pouca memória.
+O resultado é gerado em `dist`.
